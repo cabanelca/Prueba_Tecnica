@@ -5,6 +5,7 @@ Public Class Ventas
 
     Dim ventaId As Integer
     Dim comando As New SqlCommand
+    Dim productosel As CEProducto = New CEProducto()
     Private Sub LimpiarVtas()
         'ComboBoxIDCliente.Clear()
         TextBoxFecha.Clear()
@@ -28,7 +29,13 @@ Public Class Ventas
 
         ' ComboBoxIDCliente.DataSource = 'clientes
 
-        DgvVentas.DataSource = producto.ListarVentas()
+        ' DgvVentas.DataSource = producto.ListarVentas()
+    End Sub
+    Private Sub CargarColumnaGrillaProd()
+        DgvVentas.Columns.Add("Nombre", "Nombre")
+        DgvVentas.Columns.Add("Id", "Codigo Producto")
+        DgvVentas.Columns.Add("Precio", "Precio")
+
     End Sub
 
     Private Sub IconButtonAgregarVta_Click(sender As Object, e As EventArgs) Handles IconButtonAgregarVta.Click
@@ -115,6 +122,10 @@ Public Class Ventas
         Dim productofil = listaProducto.FirstOrDefault(Function(x) x.Nombre.ToUpper().Contains(filtro.ToUpper()))
         If productofil Is Nothing Then Return
         TextBoxProducNoEditab.Text = productofil.Nombre
+        productosel = productofil
+    End Sub
+
+    Private Sub IconButtonBuscarProd_Click(sender As Object, e As EventArgs) Handles IconButtonBuscarProd.Click
 
     End Sub
 End Class
