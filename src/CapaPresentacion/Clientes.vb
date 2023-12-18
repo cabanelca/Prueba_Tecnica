@@ -1,7 +1,7 @@
 ﻿Imports System.Configuration
 Imports System.Data.SqlClient
 Public Class Clientes
-
+    Dim clienteId As Integer
     Dim comando As New SqlCommand
     Private Sub LimpiarDatosClientes()
         TextBoxCliente.Clear()
@@ -52,6 +52,7 @@ Public Class Clientes
 
         DgvClientes.DataSource = agregar.ListarClientes()
         Try
+            cliente.Id = clienteId
             cliente.Cliente = TextBoxCliente.Text
             cliente.Telefono = CInt(TextBoxTelefono.Text)
             cliente.Correo = TextBoxCorreo.Text
@@ -73,7 +74,7 @@ Public Class Clientes
 
         DgvClientes.DataSource = agregar.ListarClientes()
         Try
-            cliente.Id = CInt(DgvClientes.CurrentRow.Cells("ID").Value)
+            cliente.Id = clienteId
             agregar.EliminarClientes(cliente)
             MessageBox.Show("Eliminado")
 
@@ -83,5 +84,26 @@ Public Class Clientes
             Throw ex
         End Try
 
+    End Sub
+
+    Private Sub DgvClientes_Click(sender As Object, e As EventArgs) Handles DgvClientes.Click
+        If DgvClientes.CurrentRow Is Nothing Then Return
+        clienteId = CInt(DgvClientes.CurrentRow.Cells("ID").Value)
+        TextBoxCliente.Text = DgvClientes.CurrentRow.Cells("Cliente").Value
+        TextBoxTelefono.Text = DgvClientes.CurrentRow.Cells("Telefono").Value
+
+        TextBoxCorreo.Text = DgvClientes.CurrentRow.Cells("Correo").Value
+
+    End Sub
+
+    Private Sub TextBox4_TextChanged(sender As Object, e As EventArgs) Handles TextBox4.TextChanged
+        Dim filtro = TextBox4.Text
+        If filtro.Length < 3 Then Return
+        Dim listaProducto As List(Of CEProducto) = New List(Of CEProducto)()
+        Dim producto As CProductosNegocio = New CProductosNegocio()
+        listaProducto = producto.ListarProductos()
+        Dim listaFiltrada = listaProducto.FindAll(Function(x) x.Nombre.ToUpper().Contains(filtro.ToUpper()))
+        DgvClientes.DataSource = Nothing
+        DgvClientes.DataSource = listaFiltrada
     End Sub
 End Class

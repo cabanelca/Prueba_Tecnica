@@ -185,6 +185,7 @@ Partial Class Clientes
         Me.DgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgvClientes.Location = New System.Drawing.Point(355, 151)
         Me.DgvClientes.Name = "DgvClientes"
+        Me.DgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DgvClientes.Size = New System.Drawing.Size(444, 297)
         Me.DgvClientes.TabIndex = 12
         '

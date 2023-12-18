@@ -40,7 +40,7 @@ Public Class Productos
 
             agregar.agregarProductos(producto)
             MessageBox.Show("Agregaste el producto")
-
+            LimpiarDatos()
             Close()
         Catch ex As Exception
             Throw ex
@@ -95,15 +95,7 @@ Public Class Productos
 
     Public Sub IconButtonBuscar_Click(sender As Object, e As EventArgs) Handles IconButtonBuscar.Click
 
-        'Dim listafiltrada As List(Of CEProducto) = New List(Of CEProducto)()
-        'Dim filtro As String = TextBoxBuscar.Text
-        'If filtro.Length >= 3 Then
-        '    listafiltrada = lista.FindAll(Function(x) x.Nombre.ToUpper().Contains(filtro.ToUpper()))
-        'Else
-        '    listafiltrada = lista
-        'End If
-        'DtvProductos.DataSource = Nothing
-        'DtvProductos.DataSource = listafiltrada
+
 
     End Sub
     Private Sub DtvProductos_Click(sender As Object, e As EventArgs) Handles DtvProductos.Click
