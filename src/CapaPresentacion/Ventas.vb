@@ -120,7 +120,14 @@ Public Class Ventas
     End Sub
 
     Private Sub IconButtonGuardarVta_Click(sender As Object, e As EventArgs) Handles IconButtonGuardarVta.Click
-
+        Dim venta As CEVentas = New CEVentas()
+        Dim agregar As CVentasNegocio = New CVentasNegocio()
+        Dim idVenta As Integer
+        venta.Fecha = DateTime.Now
+        venta.Total = totalVta
+        venta.NroVta = TextBoxNroDeVta.Text
+        venta.IdCliente = ComboBoxIDCliente.Text
+        idVenta = agregar.agregarVtas(venta)
     End Sub
 
     Private Sub TextBoxTotalVta_TextChanged(sender As Object, e As EventArgs) Handles TextBoxTotalVta.TextChanged

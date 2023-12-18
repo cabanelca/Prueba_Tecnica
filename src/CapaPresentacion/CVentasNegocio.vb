@@ -41,24 +41,24 @@ Public Class CVentasNegocio
 
 
 
-    Public Function agregarVtas(ByVal nuevo As CEVentas)
+    Public Function agregarVtas(ByVal nuevo As CEVentas) As Integer
 
         Dim conexion As SqlConnection = New SqlConnection(ConfigurationManager.ConnectionStrings("StrCon").ConnectionString)
         Dim comando As SqlCommand = New SqlCommand()
-
+        Dim id As Integer
         Try
             comando.CommandType = System.Data.CommandType.Text
-            comando.CommandText = "INSERT INTO Ventas (Id, IDCliente, Fecha,Total, NroVta) VALUES (@Id, @IDCliente, @Fecha, @Total, @NroVta)"
+            comando.CommandText = "INSERT INTO Ventas (IDCliente, Fecha,Total, NroVta) VALUES (@IDCliente, @Fecha, @Total, @NroVta); select scope_identity()"
             comando.Connection = conexion
 
-            comando.Parameters.AddWithValue("@Id", nuevo.Id)
+
             comando.Parameters.AddWithValue("@IDCliente", Convert.ToInt32(nuevo.IdCliente))
             comando.Parameters.AddWithValue("@Fecha", Convert.ToDateTime(nuevo.Fecha))
             comando.Parameters.AddWithValue("@Total", Convert.ToDecimal(nuevo.Total))
             comando.Parameters.AddWithValue("@NroVta", Convert.ToInt32(nuevo.NroVta))
 
             conexion.Open()
-            comando.ExecuteNonQuery()
+            id = comando.ExecuteScalar()
 
         Catch ex As Exception
             Throw ex
@@ -66,6 +66,7 @@ Public Class CVentasNegocio
 
             conexion.Close()
         End Try
+        Return id
     End Function
     Public Function ModificarDatosVentas(ByVal nuevo As CEVentas)
 
