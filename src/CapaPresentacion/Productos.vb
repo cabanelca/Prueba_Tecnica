@@ -106,19 +106,25 @@ Public Class Productos
         'DtvProductos.DataSource = listafiltrada
 
     End Sub
-
-
-
-
-
     Private Sub DtvProductos_Click(sender As Object, e As EventArgs) Handles DtvProductos.Click
         If DtvProductos.CurrentRow Is Nothing Then Return
         productoId = CInt(DtvProductos.CurrentRow.Cells("ID").Value)
         TextBoxNombre.Text = DtvProductos.CurrentRow.Cells("Nombre").Value
         TextBoxPrecio.Text = DtvProductos.CurrentRow.Cells("Precio").Value
 
-        TextBoxCategoria.Text =DtvProductos.CurrentRow.Cells("Categoria").Value
+        TextBoxCategoria.Text = DtvProductos.CurrentRow.Cells("Categoria").Value
         TextBoxCantidad.Text = DtvProductos.CurrentRow.Cells("Cantidad").Value
 
+    End Sub
+
+    Private Sub TextBoxBuscar_TextChanged(sender As Object, e As EventArgs) Handles TextBoxBuscar.TextChanged
+        Dim filtro = TextBoxBuscar.Text
+        If filtro.Length < 3 Then Return
+        Dim listaProducto As List(Of CEProducto) = New List(Of CEProducto)()
+        Dim producto As CProductosNegocio = New CProductosNegocio()
+        listaProducto = producto.ListarProductos()
+        Dim listaFiltrada = listaProducto.FindAll(Function(x) x.Nombre.ToUpper().Contains(filtro.ToUpper()))
+        DtvProductos.DataSource = Nothing
+        DtvProductos.DataSource = listaFiltrada
     End Sub
 End Class
