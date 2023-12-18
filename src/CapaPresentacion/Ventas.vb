@@ -128,6 +128,18 @@ Public Class Ventas
         venta.NroVta = TextBoxNroDeVta.Text
         venta.IdCliente = ComboBoxIDCliente.Text
         idVenta = agregar.agregarVtas(venta)
+        For Each fila As DataGridViewRow In DgvVentas.Rows
+            Dim item As CEVentasItems = New CEVentasItems()
+            Dim ventaItem As CVentasItemsNegocio = New CVentasItemsNegocio()
+
+            item.IDVenta = idVenta
+            item.IDProducto = fila.Cells("Id").Value
+            item.Cantidad = 1
+            item.PrecioUnitario = fila.Cells("Precio").Value
+            item.PrecioTotal = item.Cantidad * item.PrecioUnitario
+            ventaItem.GuardarVtasItems(item)
+        Next
+        Close()
     End Sub
 
     Private Sub TextBoxTotalVta_TextChanged(sender As Object, e As EventArgs) Handles TextBoxTotalVta.TextChanged

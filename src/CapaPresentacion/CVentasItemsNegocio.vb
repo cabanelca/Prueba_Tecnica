@@ -1,21 +1,22 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Configuration
 Public Class CVentasItemsNegocio
-    Public Function GuardarrVtas(ByVal nuevo As CEVentasItems)
+    Public Function GuardarVtasItems(ByVal nuevo As CEVentasItems)
         Dim conexion As SqlConnection = New SqlConnection(ConfigurationManager.ConnectionStrings("StrCon").ConnectionString)
         Dim comando As SqlCommand = New SqlCommand()
 
         Try
             comando.CommandType = System.Data.CommandType.Text
-            comando.CommandText = "INSERT INTO Ventas (Id, IDVenta, IDProducto,PrecioUnitario, Precio Total) VALUES (@Id, @IDVenta, @IDProducto, @PrecioUnitario, @PrecioTotal)"
+            comando.CommandText = "INSERT INTO VentasItems (IDVenta, IDProducto,PrecioUnitario,Cantidad, PrecioTotal) VALUES (@IDVenta, @IDProducto, @PrecioUnitario,@Cantidad, @PrecioTotal)"
             comando.Connection = conexion
 
-            comando.Parameters.AddWithValue("@Id", nuevo.Id)
-            comando.Parameters.AddWithValue("@IDCliente", Convert.ToInt32(nuevo.IDVenta))
-            comando.Parameters.AddWithValue("@Fecha", Convert.ToInt32(nuevo.IDProducto))
-            comando.Parameters.AddWithValue("@Total", Convert.ToInt32(nuevo.IDProducto))
-            comando.Parameters.AddWithValue("@NroVta", Convert.ToDecimal(nuevo.PrecioUnitario))
-            comando.Parameters.AddWithValue("@NroVta", Convert.ToDecimal(nuevo.PrecioTotal))
+
+            comando.Parameters.AddWithValue("@IDVenta", Convert.ToInt32(nuevo.IDVenta))
+            comando.Parameters.AddWithValue("@IDProducto", Convert.ToInt32(nuevo.IDProducto))
+            comando.Parameters.AddWithValue("@PrecioUnitario", Convert.ToDecimal(nuevo.PrecioUnitario))
+            comando.Parameters.AddWithValue("@Cantidad", Convert.ToDecimal(nuevo.Cantidad))
+            comando.Parameters.AddWithValue("@PrecioTotal", Convert.ToDecimal(nuevo.PrecioTotal))
+
 
 
             conexion.Open()

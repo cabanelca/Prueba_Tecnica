@@ -3,6 +3,7 @@
     Private _IDVenta As Integer
     Private _IDProducto As Integer
     Private _precioUnitario As Decimal
+    Private _cantidad As Integer
     Private _precioTotal As Decimal
 
     Public Property ID As Integer
@@ -47,6 +48,15 @@
         End Get
         Set(value As Decimal)
             _precioTotal = value
+        End Set
+    End Property
+
+    Public Property Cantidad As Integer
+        Get
+            Return _cantidad
+        End Get
+        Set(value As Integer)
+            _cantidad = value
         End Set
     End Property
 End Class
