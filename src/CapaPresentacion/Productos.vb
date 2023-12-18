@@ -113,5 +113,11 @@ Public Class Productos
     Private Sub DtvProductos_Click(sender As Object, e As EventArgs) Handles DtvProductos.Click
         If DtvProductos.CurrentRow Is Nothing Then Return
         productoId = CInt(DtvProductos.CurrentRow.Cells("ID").Value)
+        TextBoxNombre.Text = DtvProductos.CurrentRow.Cells("Nombre").Value
+        TextBoxPrecio.Text = DtvProductos.CurrentRow.Cells("Precio").Value
+
+        TextBoxCategoria.Text =DtvProductos.CurrentRow.Cells("Categoria").Value
+        TextBoxCantidad.Text = DtvProductos.CurrentRow.Cells("Cantidad").Value
+
     End Sub
 End Class
