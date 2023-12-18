@@ -59,6 +59,7 @@ Public Class Productos
 
         DtvProductos.DataSource = agregar.ListarProductos()
         Try
+            producto.Id = productoId
             producto.Nombre = TextBoxNombre.Text
             producto.Precio = CDbl(TextBoxPrecio.Text)
             producto.Categoria = TextBoxCategoria.Text
