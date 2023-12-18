@@ -19,4 +19,8 @@ Public Class Vista
     Private Sub IconButtonVentas_Click(sender As Object, e As EventArgs) Handles IconButtonVentas.Click
         Ventas.ShowDialog()
     End Sub
+
+    Private Sub IconButtonHome_Click(sender As Object, e As EventArgs) Handles IconButtonHome.Click
+        Close()
+    End Sub
 End Class

@@ -3,7 +3,7 @@
     Private _nombre As String
     Private _precio As Decimal
     Private _categoria As String
-    Private _canidad As Integer
+    Private _cantidad As Integer
 
     Public Sub New()
     End Sub
@@ -45,10 +45,10 @@
 
     Public Property Cantidad As Integer
         Get
-            Return _canidad
+            Return _cantidad
         End Get
         Set(value As Integer)
-            _canidad = value
+            _cantidad = value
         End Set
     End Property
 End Class

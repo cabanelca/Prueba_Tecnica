@@ -37,6 +37,7 @@ Partial Class Vista
         '
         Me.PanelSuperior.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.PanelSuperior.Controls.Add(Me.LabelTitulo)
+        Me.PanelSuperior.Controls.Add(Me.IconButtonHome)
         Me.PanelSuperior.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelSuperior.Location = New System.Drawing.Point(0, 0)
         Me.PanelSuperior.Name = "PanelSuperior"
@@ -60,7 +61,6 @@ Partial Class Vista
         Me.PanelLateral.Controls.Add(Me.IconButtonVentas)
         Me.PanelLateral.Controls.Add(Me.IconButtonClientes)
         Me.PanelLateral.Controls.Add(Me.IconButtonProductos)
-        Me.PanelLateral.Controls.Add(Me.IconButtonHome)
         Me.PanelLateral.Dock = System.Windows.Forms.DockStyle.Left
         Me.PanelLateral.Location = New System.Drawing.Point(0, 65)
         Me.PanelLateral.Name = "PanelLateral"
@@ -112,15 +112,14 @@ Partial Class Vista
         'IconButtonHome
         '
         Me.IconButtonHome.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.IconButtonHome.IconChar = FontAwesome.Sharp.IconChar.HomeUser
+        Me.IconButtonHome.IconChar = FontAwesome.Sharp.IconChar.X
         Me.IconButtonHome.IconColor = System.Drawing.Color.Black
         Me.IconButtonHome.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.IconButtonHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.IconButtonHome.Location = New System.Drawing.Point(53, 54)
+        Me.IconButtonHome.Location = New System.Drawing.Point(743, 3)
         Me.IconButtonHome.Name = "IconButtonHome"
-        Me.IconButtonHome.Size = New System.Drawing.Size(90, 46)
+        Me.IconButtonHome.Size = New System.Drawing.Size(54, 55)
         Me.IconButtonHome.TabIndex = 2
-        Me.IconButtonHome.Text = "Home"
         Me.IconButtonHome.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.IconButtonHome.UseVisualStyleBackColor = False
         '

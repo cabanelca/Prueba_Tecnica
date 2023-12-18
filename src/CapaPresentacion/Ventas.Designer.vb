@@ -28,17 +28,18 @@ Partial Class Ventas
         Me.LabelVentasTitulo = New System.Windows.Forms.Label()
         Me.PanelVentas = New System.Windows.Forms.Panel()
         Me.IconButtonHome = New FontAwesome.Sharp.IconButton()
-        Me.TextBoxNroCliente = New System.Windows.Forms.TextBox()
         Me.TextBoxFecha = New System.Windows.Forms.TextBox()
         Me.TextBoxTotalVta = New System.Windows.Forms.TextBox()
-        Me.TextBoxBuscarVta = New System.Windows.Forms.TextBox()
+        Me.TextBoxBuscarPro = New System.Windows.Forms.TextBox()
         Me.IconButtonAgregarVta = New FontAwesome.Sharp.IconButton()
         Me.IconButtonModificarVta = New FontAwesome.Sharp.IconButton()
         Me.IconButtonEliminarVta = New FontAwesome.Sharp.IconButton()
-        Me.IconButtonBuscarVta = New FontAwesome.Sharp.IconButton()
+        Me.IconButtonBuscarProd = New FontAwesome.Sharp.IconButton()
         Me.DgvVentas = New System.Windows.Forms.DataGridView()
         Me.LabelNroVta = New System.Windows.Forms.Label()
         Me.TextBoxNroDeVta = New System.Windows.Forms.TextBox()
+        Me.ComboBoxIDCliente = New System.Windows.Forms.ComboBox()
+        Me.TextBoxProducNoEditab = New System.Windows.Forms.TextBox()
         Me.PanelVentas.SuspendLayout()
         CType(Me.DgvVentas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -46,7 +47,7 @@ Partial Class Ventas
         'LabelClienteId
         '
         Me.LabelClienteId.AutoSize = True
-        Me.LabelClienteId.Location = New System.Drawing.Point(95, 122)
+        Me.LabelClienteId.Location = New System.Drawing.Point(3, 73)
         Me.LabelClienteId.Name = "LabelClienteId"
         Me.LabelClienteId.Size = New System.Drawing.Size(56, 13)
         Me.LabelClienteId.TabIndex = 0
@@ -55,7 +56,7 @@ Partial Class Ventas
         'LabelFecha
         '
         Me.LabelFecha.AutoSize = True
-        Me.LabelFecha.Location = New System.Drawing.Point(95, 188)
+        Me.LabelFecha.Location = New System.Drawing.Point(589, 124)
         Me.LabelFecha.Name = "LabelFecha"
         Me.LabelFecha.Size = New System.Drawing.Size(37, 13)
         Me.LabelFecha.TabIndex = 1
@@ -64,7 +65,7 @@ Partial Class Ventas
         'LabelTotalVta
         '
         Me.LabelTotalVta.AutoSize = True
-        Me.LabelTotalVta.Location = New System.Drawing.Point(95, 253)
+        Me.LabelTotalVta.Location = New System.Drawing.Point(561, 399)
         Me.LabelTotalVta.Name = "LabelTotalVta"
         Me.LabelTotalVta.Size = New System.Drawing.Size(65, 13)
         Me.LabelTotalVta.TabIndex = 2
@@ -106,40 +107,33 @@ Partial Class Ventas
         Me.IconButtonHome.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.IconButtonHome.UseVisualStyleBackColor = False
         '
-        'TextBoxNroCliente
-        '
-        Me.TextBoxNroCliente.Location = New System.Drawing.Point(195, 122)
-        Me.TextBoxNroCliente.Name = "TextBoxNroCliente"
-        Me.TextBoxNroCliente.Size = New System.Drawing.Size(143, 20)
-        Me.TextBoxNroCliente.TabIndex = 8
-        '
         'TextBoxFecha
         '
-        Me.TextBoxFecha.Location = New System.Drawing.Point(195, 185)
+        Me.TextBoxFecha.Location = New System.Drawing.Point(645, 121)
         Me.TextBoxFecha.Name = "TextBoxFecha"
         Me.TextBoxFecha.Size = New System.Drawing.Size(143, 20)
         Me.TextBoxFecha.TabIndex = 9
         '
         'TextBoxTotalVta
         '
-        Me.TextBoxTotalVta.Location = New System.Drawing.Point(195, 250)
+        Me.TextBoxTotalVta.Location = New System.Drawing.Point(645, 396)
         Me.TextBoxTotalVta.Name = "TextBoxTotalVta"
         Me.TextBoxTotalVta.Size = New System.Drawing.Size(143, 20)
         Me.TextBoxTotalVta.TabIndex = 10
         '
-        'TextBoxBuscarVta
+        'TextBoxBuscarPro
         '
-        Me.TextBoxBuscarVta.Location = New System.Drawing.Point(487, 122)
-        Me.TextBoxBuscarVta.Name = "TextBoxBuscarVta"
-        Me.TextBoxBuscarVta.Size = New System.Drawing.Size(143, 20)
-        Me.TextBoxBuscarVta.TabIndex = 11
+        Me.TextBoxBuscarPro.Location = New System.Drawing.Point(87, 145)
+        Me.TextBoxBuscarPro.Name = "TextBoxBuscarPro"
+        Me.TextBoxBuscarPro.Size = New System.Drawing.Size(143, 20)
+        Me.TextBoxBuscarPro.TabIndex = 11
         '
         'IconButtonAgregarVta
         '
         Me.IconButtonAgregarVta.IconChar = FontAwesome.Sharp.IconChar.None
         Me.IconButtonAgregarVta.IconColor = System.Drawing.Color.Black
         Me.IconButtonAgregarVta.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.IconButtonAgregarVta.Location = New System.Drawing.Point(57, 375)
+        Me.IconButtonAgregarVta.Location = New System.Drawing.Point(6, 415)
         Me.IconButtonAgregarVta.Name = "IconButtonAgregarVta"
         Me.IconButtonAgregarVta.Size = New System.Drawing.Size(75, 23)
         Me.IconButtonAgregarVta.TabIndex = 12
@@ -151,7 +145,7 @@ Partial Class Ventas
         Me.IconButtonModificarVta.IconChar = FontAwesome.Sharp.IconChar.None
         Me.IconButtonModificarVta.IconColor = System.Drawing.Color.Black
         Me.IconButtonModificarVta.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.IconButtonModificarVta.Location = New System.Drawing.Point(147, 375)
+        Me.IconButtonModificarVta.Location = New System.Drawing.Point(87, 415)
         Me.IconButtonModificarVta.Name = "IconButtonModificarVta"
         Me.IconButtonModificarVta.Size = New System.Drawing.Size(75, 23)
         Me.IconButtonModificarVta.TabIndex = 13
@@ -163,37 +157,37 @@ Partial Class Ventas
         Me.IconButtonEliminarVta.IconChar = FontAwesome.Sharp.IconChar.None
         Me.IconButtonEliminarVta.IconColor = System.Drawing.Color.Black
         Me.IconButtonEliminarVta.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.IconButtonEliminarVta.Location = New System.Drawing.Point(239, 375)
+        Me.IconButtonEliminarVta.Location = New System.Drawing.Point(168, 415)
         Me.IconButtonEliminarVta.Name = "IconButtonEliminarVta"
         Me.IconButtonEliminarVta.Size = New System.Drawing.Size(75, 23)
         Me.IconButtonEliminarVta.TabIndex = 14
         Me.IconButtonEliminarVta.Text = "Eliminar"
         Me.IconButtonEliminarVta.UseVisualStyleBackColor = True
         '
-        'IconButtonBuscarVta
+        'IconButtonBuscarProd
         '
-        Me.IconButtonBuscarVta.IconChar = FontAwesome.Sharp.IconChar.None
-        Me.IconButtonBuscarVta.IconColor = System.Drawing.Color.Black
-        Me.IconButtonBuscarVta.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.IconButtonBuscarVta.Location = New System.Drawing.Point(684, 122)
-        Me.IconButtonBuscarVta.Name = "IconButtonBuscarVta"
-        Me.IconButtonBuscarVta.Size = New System.Drawing.Size(75, 23)
-        Me.IconButtonBuscarVta.TabIndex = 15
-        Me.IconButtonBuscarVta.Text = "Buscar"
-        Me.IconButtonBuscarVta.UseVisualStyleBackColor = True
+        Me.IconButtonBuscarProd.IconChar = FontAwesome.Sharp.IconChar.None
+        Me.IconButtonBuscarProd.IconColor = System.Drawing.Color.Black
+        Me.IconButtonBuscarProd.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.IconButtonBuscarProd.Location = New System.Drawing.Point(6, 142)
+        Me.IconButtonBuscarProd.Name = "IconButtonBuscarProd"
+        Me.IconButtonBuscarProd.Size = New System.Drawing.Size(75, 23)
+        Me.IconButtonBuscarProd.TabIndex = 15
+        Me.IconButtonBuscarProd.Text = "Agregar"
+        Me.IconButtonBuscarProd.UseVisualStyleBackColor = True
         '
         'DgvVentas
         '
         Me.DgvVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DgvVentas.Location = New System.Drawing.Point(364, 156)
+        Me.DgvVentas.Location = New System.Drawing.Point(0, 171)
         Me.DgvVentas.Name = "DgvVentas"
-        Me.DgvVentas.Size = New System.Drawing.Size(435, 293)
+        Me.DgvVentas.Size = New System.Drawing.Size(800, 209)
         Me.DgvVentas.TabIndex = 16
         '
         'LabelNroVta
         '
         Me.LabelNroVta.AutoSize = True
-        Me.LabelNroVta.Location = New System.Drawing.Point(95, 306)
+        Me.LabelNroVta.Location = New System.Drawing.Point(549, 69)
         Me.LabelNroVta.Name = "LabelNroVta"
         Me.LabelNroVta.Size = New System.Drawing.Size(90, 13)
         Me.LabelNroVta.TabIndex = 17
@@ -201,27 +195,45 @@ Partial Class Ventas
         '
         'TextBoxNroDeVta
         '
-        Me.TextBoxNroDeVta.Location = New System.Drawing.Point(195, 303)
+        Me.TextBoxNroDeVta.Location = New System.Drawing.Point(645, 66)
         Me.TextBoxNroDeVta.Name = "TextBoxNroDeVta"
         Me.TextBoxNroDeVta.Size = New System.Drawing.Size(143, 20)
         Me.TextBoxNroDeVta.TabIndex = 18
+        '
+        'ComboBoxIDCliente
+        '
+        Me.ComboBoxIDCliente.FormattingEnabled = True
+        Me.ComboBoxIDCliente.Location = New System.Drawing.Point(87, 73)
+        Me.ComboBoxIDCliente.Name = "ComboBoxIDCliente"
+        Me.ComboBoxIDCliente.Size = New System.Drawing.Size(143, 21)
+        Me.ComboBoxIDCliente.TabIndex = 19
+        '
+        'TextBoxProducNoEditab
+        '
+        Me.TextBoxProducNoEditab.Enabled = False
+        Me.TextBoxProducNoEditab.Location = New System.Drawing.Point(248, 144)
+        Me.TextBoxProducNoEditab.Name = "TextBoxProducNoEditab"
+        Me.TextBoxProducNoEditab.ReadOnly = True
+        Me.TextBoxProducNoEditab.Size = New System.Drawing.Size(240, 20)
+        Me.TextBoxProducNoEditab.TabIndex = 20
         '
         'Ventas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.TextBoxProducNoEditab)
+        Me.Controls.Add(Me.ComboBoxIDCliente)
         Me.Controls.Add(Me.TextBoxNroDeVta)
         Me.Controls.Add(Me.LabelNroVta)
         Me.Controls.Add(Me.DgvVentas)
-        Me.Controls.Add(Me.IconButtonBuscarVta)
+        Me.Controls.Add(Me.IconButtonBuscarProd)
         Me.Controls.Add(Me.IconButtonEliminarVta)
         Me.Controls.Add(Me.IconButtonModificarVta)
         Me.Controls.Add(Me.IconButtonAgregarVta)
-        Me.Controls.Add(Me.TextBoxBuscarVta)
+        Me.Controls.Add(Me.TextBoxBuscarPro)
         Me.Controls.Add(Me.TextBoxTotalVta)
         Me.Controls.Add(Me.TextBoxFecha)
-        Me.Controls.Add(Me.TextBoxNroCliente)
         Me.Controls.Add(Me.PanelVentas)
         Me.Controls.Add(Me.LabelTotalVta)
         Me.Controls.Add(Me.LabelFecha)
@@ -242,16 +254,17 @@ Partial Class Ventas
     Friend WithEvents LabelTotalVta As Label
     Friend WithEvents LabelVentasTitulo As Label
     Friend WithEvents PanelVentas As Panel
-    Friend WithEvents TextBoxNroCliente As TextBox
     Friend WithEvents TextBoxFecha As TextBox
     Friend WithEvents TextBoxTotalVta As TextBox
-    Friend WithEvents TextBoxBuscarVta As TextBox
+    Friend WithEvents TextBoxBuscarPro As TextBox
     Friend WithEvents IconButtonAgregarVta As FontAwesome.Sharp.IconButton
     Friend WithEvents IconButtonModificarVta As FontAwesome.Sharp.IconButton
     Friend WithEvents IconButtonEliminarVta As FontAwesome.Sharp.IconButton
-    Friend WithEvents IconButtonBuscarVta As FontAwesome.Sharp.IconButton
+    Friend WithEvents IconButtonBuscarProd As FontAwesome.Sharp.IconButton
     Friend WithEvents IconButtonHome As FontAwesome.Sharp.IconButton
     Friend WithEvents DgvVentas As DataGridView
     Friend WithEvents LabelNroVta As Label
     Friend WithEvents TextBoxNroDeVta As TextBox
+    Friend WithEvents ComboBoxIDCliente As ComboBox
+    Friend WithEvents TextBoxProducNoEditab As TextBox
 End Class

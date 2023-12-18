@@ -68,14 +68,14 @@ Public Class CClienteNegocio
 
         Dim conexion As SqlConnection = New SqlConnection(ConfigurationManager.ConnectionStrings("StrCon").ConnectionString)
 
-        Dim consulta As String = "UPDATE Clientes Set Clinte=@Nombre, Telefono=@Telefono, Correo=@Correo WHERE ID=@ID"
-        Dim command As New SqlCommand(consulta)
+        Dim consulta As String = "UPDATE Clientes Set Cliente=@Nombre, Telefono=@Telefono, Correo=@Correo WHERE ID=@ID"
+        Dim command As New SqlCommand(consulta, conexion)
         command.Parameters.AddWithValue("@Nombre", modificar.Cliente)
         command.Parameters.AddWithValue("@Telefono", Convert.ToInt32(modificar.Telefono))
         command.Parameters.AddWithValue("@Correo", modificar.Correo)
         command.Parameters.AddWithValue("@ID", Convert.ToInt32(modificar.Id))
 
-        command.Parameters.AddWithValue("@ID", Convert.ToInt32(modificar.Id))
+
         conexion.Open()
         command.ExecuteNonQuery()
         conexion.Close()
@@ -86,8 +86,8 @@ Public Class CClienteNegocio
 
         Dim conexion As SqlConnection = New SqlConnection(ConfigurationManager.ConnectionStrings("StrCon").ConnectionString)
 
-        Dim consulta As String = "DELETE  FROM Productos WHERE ID=@ID"
-        Dim command As New SqlCommand(consulta)
+        Dim consulta As String = "DELETE  FROM Clientes WHERE ID=@ID"
+        Dim command As New SqlCommand(consulta, conexion)
 
         command.Parameters.AddWithValue("@ID", Convert.ToInt32(eliminar.Id))
         conexion.Open()
