@@ -6,7 +6,7 @@ Public Class Ventas
     Dim ventaId As Integer
     Dim comando As New SqlCommand
     Dim productosel As CEProducto = New CEProducto()
-
+    Dim totalVta As Decimal
     Private Sub LimpiarVtas()
         'ComboBoxIDCliente.Clear()
         TextBoxFecha.Clear()
@@ -39,28 +39,7 @@ Public Class Ventas
 
     End Sub
 
-    Private Sub IconButtonAgregarVta_Click(sender As Object, e As EventArgs) Handles IconButtonAgregarVta.Click
-        Dim venta As CEVentas = New CEVentas()
-        Dim agregar As CVentasNegocio = New CVentasNegocio()
-        Dim conexion As New SqlConnection(ConfigurationManager.ConnectionStrings("StrCon").ConnectionString)
-        Try
 
-            venta.IdCliente = CInt(ComboBoxIDCliente.Text)
-            venta.Fecha = CDate(TextBoxFecha.Text)
-            venta.Total = CDec(TextBoxTotalVta.Text)
-            venta.NroVta = TextBoxNroDeVta.Text
-
-            agregar.agregarVtas(venta)
-            MessageBox.Show("Agregaste el producto")
-
-            LimpiarVtas()
-
-            Close()
-        Catch ex As Exception
-            Throw ex
-        End Try
-
-    End Sub
 
     Private Sub IconButtonModificarVta_Click(sender As Object, e As EventArgs) Handles IconButtonModificarVta.Click
         Dim venta As CEVentas = New CEVentas()
@@ -124,6 +103,7 @@ Public Class Ventas
         If productofil Is Nothing Then Return
         TextBoxProducNoEditab.Text = productofil.Nombre
         productosel = productofil
+
     End Sub
 
 
@@ -135,5 +115,15 @@ Public Class Ventas
         DgvVentas(0, nuevaPosicion).Value = productosel.Nombre
         DgvVentas(1, nuevaPosicion).Value = productosel.Id
         DgvVentas(2, nuevaPosicion).Value = productosel.Precio
+        totalVta += productosel.Precio
+        TextBoxTotalVta.Text = totalVta
+    End Sub
+
+    Private Sub IconButtonGuardarVta_Click(sender As Object, e As EventArgs) Handles IconButtonGuardarVta.Click
+
+    End Sub
+
+    Private Sub TextBoxTotalVta_TextChanged(sender As Object, e As EventArgs) Handles TextBoxTotalVta.TextChanged
+
     End Sub
 End Class

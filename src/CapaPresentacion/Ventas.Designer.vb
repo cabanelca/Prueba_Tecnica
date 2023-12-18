@@ -31,7 +31,7 @@ Partial Class Ventas
         Me.TextBoxFecha = New System.Windows.Forms.TextBox()
         Me.TextBoxTotalVta = New System.Windows.Forms.TextBox()
         Me.TextBoxBuscarPro = New System.Windows.Forms.TextBox()
-        Me.IconButtonAgregarVta = New FontAwesome.Sharp.IconButton()
+        Me.IconButtonGuardarVta = New FontAwesome.Sharp.IconButton()
         Me.IconButtonModificarVta = New FontAwesome.Sharp.IconButton()
         Me.IconButtonEliminarVta = New FontAwesome.Sharp.IconButton()
         Me.IconButtonAgregarProd = New FontAwesome.Sharp.IconButton()
@@ -128,17 +128,17 @@ Partial Class Ventas
         Me.TextBoxBuscarPro.Size = New System.Drawing.Size(143, 20)
         Me.TextBoxBuscarPro.TabIndex = 11
         '
-        'IconButtonAgregarVta
+        'IconButtonGuardarVta
         '
-        Me.IconButtonAgregarVta.IconChar = FontAwesome.Sharp.IconChar.None
-        Me.IconButtonAgregarVta.IconColor = System.Drawing.Color.Black
-        Me.IconButtonAgregarVta.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.IconButtonAgregarVta.Location = New System.Drawing.Point(6, 415)
-        Me.IconButtonAgregarVta.Name = "IconButtonAgregarVta"
-        Me.IconButtonAgregarVta.Size = New System.Drawing.Size(75, 23)
-        Me.IconButtonAgregarVta.TabIndex = 12
-        Me.IconButtonAgregarVta.Text = "Agregar"
-        Me.IconButtonAgregarVta.UseVisualStyleBackColor = True
+        Me.IconButtonGuardarVta.IconChar = FontAwesome.Sharp.IconChar.None
+        Me.IconButtonGuardarVta.IconColor = System.Drawing.Color.Black
+        Me.IconButtonGuardarVta.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.IconButtonGuardarVta.Location = New System.Drawing.Point(6, 415)
+        Me.IconButtonGuardarVta.Name = "IconButtonGuardarVta"
+        Me.IconButtonGuardarVta.Size = New System.Drawing.Size(75, 23)
+        Me.IconButtonGuardarVta.TabIndex = 12
+        Me.IconButtonGuardarVta.Text = "Guardar"
+        Me.IconButtonGuardarVta.UseVisualStyleBackColor = True
         '
         'IconButtonModificarVta
         '
@@ -184,6 +184,7 @@ Partial Class Ventas
         Me.DgvVentas.Location = New System.Drawing.Point(0, 171)
         Me.DgvVentas.Name = "DgvVentas"
         Me.DgvVentas.ReadOnly = True
+        Me.DgvVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DgvVentas.Size = New System.Drawing.Size(800, 209)
         Me.DgvVentas.TabIndex = 16
         '
@@ -233,7 +234,7 @@ Partial Class Ventas
         Me.Controls.Add(Me.IconButtonAgregarProd)
         Me.Controls.Add(Me.IconButtonEliminarVta)
         Me.Controls.Add(Me.IconButtonModificarVta)
-        Me.Controls.Add(Me.IconButtonAgregarVta)
+        Me.Controls.Add(Me.IconButtonGuardarVta)
         Me.Controls.Add(Me.TextBoxBuscarPro)
         Me.Controls.Add(Me.TextBoxTotalVta)
         Me.Controls.Add(Me.TextBoxFecha)
@@ -260,7 +261,7 @@ Partial Class Ventas
     Friend WithEvents TextBoxFecha As TextBox
     Friend WithEvents TextBoxTotalVta As TextBox
     Friend WithEvents TextBoxBuscarPro As TextBox
-    Friend WithEvents IconButtonAgregarVta As FontAwesome.Sharp.IconButton
+    Friend WithEvents IconButtonGuardarVta As FontAwesome.Sharp.IconButton
     Friend WithEvents IconButtonModificarVta As FontAwesome.Sharp.IconButton
     Friend WithEvents IconButtonEliminarVta As FontAwesome.Sharp.IconButton
     Friend WithEvents IconButtonAgregarProd As FontAwesome.Sharp.IconButton

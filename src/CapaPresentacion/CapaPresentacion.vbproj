@@ -87,6 +87,7 @@
     <Compile Include="CECliente.vb" />
     <Compile Include="CEProducto.vb" />
     <Compile Include="CEVentas.vb" />
+    <Compile Include="CEVentasItems.vb" />
     <Compile Include="Clientes.Designer.vb">
       <DependentUpon>Clientes.vb</DependentUpon>
     </Compile>
@@ -95,6 +96,7 @@
     </Compile>
     <Compile Include="CProductosNegocio.vb" />
     <Compile Include="CProductoVta.vb" />
+    <Compile Include="CVentasItemsNegocio.vb" />
     <Compile Include="CVentasNegocio.vb" />
     <Compile Include="Productos.Designer.vb">
       <DependentUpon>Productos.vb</DependentUpon>

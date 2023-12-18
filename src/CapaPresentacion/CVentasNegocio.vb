@@ -55,11 +55,11 @@ Public Class CVentasNegocio
             comando.Parameters.AddWithValue("@IDCliente", Convert.ToInt32(nuevo.IdCliente))
             comando.Parameters.AddWithValue("@Fecha", Convert.ToDateTime(nuevo.Fecha))
             comando.Parameters.AddWithValue("@Total", Convert.ToDecimal(nuevo.Total))
-            comando.Parameters.AddWithValue("@NroVta", nuevo.NroVta)
+            comando.Parameters.AddWithValue("@NroVta", Convert.ToInt32(nuevo.NroVta))
 
             conexion.Open()
             comando.ExecuteNonQuery()
-            ListarVentas()
+
         Catch ex As Exception
             Throw ex
         Finally
@@ -99,9 +99,6 @@ Public Class CVentasNegocio
         ListarVentas()
 
     End Function
-    Public Function BuscarClintes(ByVal buscar As CEProducto)
 
-
-    End Function
 
 End Class
