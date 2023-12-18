@@ -187,6 +187,7 @@ Partial Class Productos
         Me.DtvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DtvProductos.Location = New System.Drawing.Point(343, 135)
         Me.DtvProductos.Name = "DtvProductos"
+        Me.DtvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DtvProductos.Size = New System.Drawing.Size(457, 312)
         Me.DtvProductos.TabIndex = 12
         '

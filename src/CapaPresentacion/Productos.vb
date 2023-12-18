@@ -7,6 +7,7 @@ Imports System.Configuration
 
 Public Class Productos
 
+    Dim productoId As Integer
 
     Dim lista As List(Of CEProducto) = New List(Of CEProducto)()
 
@@ -79,7 +80,7 @@ Public Class Productos
 
         DtvProductos.DataSource = agregar.ListarProductos()
         Try
-            producto.Id = CInt(DtvProductos.CurrentRow.Cells("ID").Value)
+            producto.Id = productoId
             agregar.EliminarDatos(producto)
             MessageBox.Show("Eliminado")
 
@@ -103,5 +104,14 @@ Public Class Productos
         'DtvProductos.DataSource = Nothing
         'DtvProductos.DataSource = listafiltrada
 
+    End Sub
+
+
+
+
+
+    Private Sub DtvProductos_Click(sender As Object, e As EventArgs) Handles DtvProductos.Click
+        If DtvProductos.CurrentRow Is Nothing Then Return
+        productoId = CInt(DtvProductos.CurrentRow.Cells("ID").Value)
     End Sub
 End Class
