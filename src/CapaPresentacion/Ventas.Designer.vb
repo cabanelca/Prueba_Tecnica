@@ -34,7 +34,7 @@ Partial Class Ventas
         Me.IconButtonAgregarVta = New FontAwesome.Sharp.IconButton()
         Me.IconButtonModificarVta = New FontAwesome.Sharp.IconButton()
         Me.IconButtonEliminarVta = New FontAwesome.Sharp.IconButton()
-        Me.IconButtonBuscarProd = New FontAwesome.Sharp.IconButton()
+        Me.IconButtonAgregarProd = New FontAwesome.Sharp.IconButton()
         Me.DgvVentas = New System.Windows.Forms.DataGridView()
         Me.LabelNroVta = New System.Windows.Forms.Label()
         Me.TextBoxNroDeVta = New System.Windows.Forms.TextBox()
@@ -164,23 +164,26 @@ Partial Class Ventas
         Me.IconButtonEliminarVta.Text = "Eliminar"
         Me.IconButtonEliminarVta.UseVisualStyleBackColor = True
         '
-        'IconButtonBuscarProd
+        'IconButtonAgregarProd
         '
-        Me.IconButtonBuscarProd.IconChar = FontAwesome.Sharp.IconChar.None
-        Me.IconButtonBuscarProd.IconColor = System.Drawing.Color.Black
-        Me.IconButtonBuscarProd.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.IconButtonBuscarProd.Location = New System.Drawing.Point(6, 142)
-        Me.IconButtonBuscarProd.Name = "IconButtonBuscarProd"
-        Me.IconButtonBuscarProd.Size = New System.Drawing.Size(75, 23)
-        Me.IconButtonBuscarProd.TabIndex = 15
-        Me.IconButtonBuscarProd.Text = "Agregar"
-        Me.IconButtonBuscarProd.UseVisualStyleBackColor = True
+        Me.IconButtonAgregarProd.IconChar = FontAwesome.Sharp.IconChar.None
+        Me.IconButtonAgregarProd.IconColor = System.Drawing.Color.Black
+        Me.IconButtonAgregarProd.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.IconButtonAgregarProd.Location = New System.Drawing.Point(6, 142)
+        Me.IconButtonAgregarProd.Name = "IconButtonAgregarProd"
+        Me.IconButtonAgregarProd.Size = New System.Drawing.Size(75, 23)
+        Me.IconButtonAgregarProd.TabIndex = 15
+        Me.IconButtonAgregarProd.Text = "Agregar"
+        Me.IconButtonAgregarProd.UseVisualStyleBackColor = True
         '
         'DgvVentas
         '
+        Me.DgvVentas.AllowUserToAddRows = False
+        Me.DgvVentas.AllowUserToDeleteRows = False
         Me.DgvVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgvVentas.Location = New System.Drawing.Point(0, 171)
         Me.DgvVentas.Name = "DgvVentas"
+        Me.DgvVentas.ReadOnly = True
         Me.DgvVentas.Size = New System.Drawing.Size(800, 209)
         Me.DgvVentas.TabIndex = 16
         '
@@ -227,7 +230,7 @@ Partial Class Ventas
         Me.Controls.Add(Me.TextBoxNroDeVta)
         Me.Controls.Add(Me.LabelNroVta)
         Me.Controls.Add(Me.DgvVentas)
-        Me.Controls.Add(Me.IconButtonBuscarProd)
+        Me.Controls.Add(Me.IconButtonAgregarProd)
         Me.Controls.Add(Me.IconButtonEliminarVta)
         Me.Controls.Add(Me.IconButtonModificarVta)
         Me.Controls.Add(Me.IconButtonAgregarVta)
@@ -260,7 +263,7 @@ Partial Class Ventas
     Friend WithEvents IconButtonAgregarVta As FontAwesome.Sharp.IconButton
     Friend WithEvents IconButtonModificarVta As FontAwesome.Sharp.IconButton
     Friend WithEvents IconButtonEliminarVta As FontAwesome.Sharp.IconButton
-    Friend WithEvents IconButtonBuscarProd As FontAwesome.Sharp.IconButton
+    Friend WithEvents IconButtonAgregarProd As FontAwesome.Sharp.IconButton
     Friend WithEvents IconButtonHome As FontAwesome.Sharp.IconButton
     Friend WithEvents DgvVentas As DataGridView
     Friend WithEvents LabelNroVta As Label

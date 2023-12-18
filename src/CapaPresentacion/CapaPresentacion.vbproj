@@ -94,6 +94,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CProductosNegocio.vb" />
+    <Compile Include="CProductoVta.vb" />
     <Compile Include="CVentasNegocio.vb" />
     <Compile Include="Productos.Designer.vb">
       <DependentUpon>Productos.vb</DependentUpon>
