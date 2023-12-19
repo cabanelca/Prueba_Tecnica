@@ -35,7 +35,7 @@ Public Class Clientes
 
 
             agregar.agregarClientes(cliente)
-            MessageBox.Show("Agregaste el producto")
+            MessageBox.Show("Agregaste el cliente")
 
             LimpiarDatosClientes()
 
@@ -59,7 +59,7 @@ Public Class Clientes
 
 
             agregar.ModificarDatosClientes(cliente)
-            MessageBox.Show("Modificaste el producto")
+            MessageBox.Show("Modificaste el cliente")
 
             LimpiarDatosClientes()
             Close()
